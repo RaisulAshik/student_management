@@ -1,0 +1,16 @@
+.content-view-button,
+.content-view-button:focus {
+    background-color: #046494;
+    border: 3px solid #046494 !important;
+    letter-spacing: 1px;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.content-view-button:hover {
+    background-color: #ffffff;
+    color: #046494;
+    border: 3px solid #046494 !important;
+    /* letter-spacing: 2px; */
+    transition: 700ms;
+}

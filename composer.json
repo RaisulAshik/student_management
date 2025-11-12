@@ -20,12 +20,12 @@
         "laravel/nexmo-notification-channel": "^2.3",
         "laravel/passport": "^9.3",
         "laravel/tinker": "^2.0",
+        "lcobucci/jwt": "3.3.3",
         "maatwebsite/excel": "^3.1",
         "nesbot/carbon": "^2.38",
         "nexmo/laravel": "^2.2",
-        "spatie/laravel-permission": "^4.0",
-        "tymon/jwt-auth": "^1.0",
-        "lcobucci/jwt": "3.3.3"
+        "spatie/laravel-permission": "^5.11",
+        "tymon/jwt-auth": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

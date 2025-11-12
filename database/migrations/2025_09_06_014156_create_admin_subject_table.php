@@ -15,8 +15,8 @@ class CreateAdminSubjectTable extends Migration
     {
         Schema::create('admin_subjects', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('admin_id');
-            $table->unsignedBigInteger('subject_id');
+            $table->unsignedInteger('admin_id');
+            $table->unsignedInteger('subject_id');
             $table->timestamps();
 
             $table->foreign('admin_id')->references('id')->on('admins')->onDelete('cascade');

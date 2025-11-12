@@ -133,23 +133,32 @@
 					</div>
 
 					<?php if(Request::is('admin*')): ?>
-
+					<?php
+						$admin = auth()->guard('admin')->user();
+					?>
 					<div class="nano">
 						<div class="nano-content">
 							<nav id="menu" class="nav-main" role="navigation">
 								<ul class="nav nav-main">
+									<!-- Dashboard -->
+									<?php if($admin->hasPermissionTo('view-dashboard', 'admin')): ?>
 									<li class="nav-active">
 										<a href="<?php echo e(route('admin.dashboard')); ?>">
 											<i class="fa fa-home" aria-hidden="true"></i>
 											<span>Dashboard</span>
 										</a>
 									</li>
+									<?php endif; ?>
+									<!-- Student Homework -->
+									<?php if($admin->hasPermissionTo('view-homework')): ?>
 									<li class="nav-active">
 										<a href="<?php echo e(route('admin.homework')); ?>">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
 											<span>Student Homework</span>
 										</a>
 									</li>
+									<?php endif; ?>
+									<?php if($admin->hasPermissionTo('manage-zoom-classes')): ?>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-video-camera" aria-hidden="true"></i>
@@ -163,34 +172,50 @@
 											</li>
 										</ul>
 									</li>
+									<?php endif; ?>
+									<?php if($admin->hasPermissionTo('view-admins', 'admin') || 
+										$admin->hasPermissionTo('view-students', 'admin') || 
+										$admin->hasPermissionTo('view-teachers', 'admin')): ?>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-users" aria-hidden="true"></i>
 											<span>Users</span>
 										</a>
 										<ul class="nav nav-children">
+											<?php if($admin->hasPermissionTo('view-admins', 'admin')): ?>
 											<li>
 												<a href="<?php echo e(route('admins.index')); ?>">
 													 Admin
 												</a>
 											</li>
+											<?php endif; ?>
+											<?php if($admin->hasPermissionTo('view-students', 'admin')): ?>
 											<li>
 												<a href="<?php echo e(route('admin.students')); ?>">
 													 Student
 												</a>
 											</li>
+											<?php endif; ?>
+											<?php if($admin->hasPermissionTo('view-teachers', 'admin')): ?>
 											<li>
 												<a href="<?php echo e(route('teachers.index')); ?>">
 													 Teacher
 												</a>
 											</li>
+											<?php endif; ?>
 										</ul>
 									</li>
+									<?php endif; ?>
+									<?php if($admin->hasPermissionTo('manage-branches', 'admin') || 
+										$admin->hasPermissionTo('manage-classes', 'admin') || 
+										$admin->hasPermissionTo('manage-subjects', 'admin') || 
+										$admin->hasPermissionTo('manage-batches', 'admin')): ?>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-university" aria-hidden="true"></i>
 											<span>Academics</span>
 										</a>
+										<?php if($admin->hasPermissionTo('manage-branches', 'admin')): ?>
 										<ul class="nav nav-children">
 											<li>
 												<a href="<?php echo e(route('branches.index')); ?>">
@@ -198,6 +223,8 @@
 												</a>
 											</li>
 										</ul>
+										<?php endif; ?>
+										<?php if($admin->hasPermissionTo('manage-classes', 'admin')): ?>
 										<ul class="nav nav-children">
 											<li>
 												<a href="<?php echo e(route('classes.index')); ?>">
@@ -205,6 +232,8 @@
 												</a>
 											</li>
 										</ul>
+										<?php endif; ?>
+										<?php if($admin->hasPermissionTo('manage-subjects', 'admin')): ?>
 										<ul class="nav nav-children">
 											<li>
 												<a href="<?php echo e(route('subjects.index')); ?>">
@@ -212,6 +241,8 @@
 												</a>
 											</li>
 										</ul>
+										<?php endif; ?>
+										<?php if($admin->hasPermissionTo('manage-batches', 'admin')): ?>
 										<ul class="nav nav-children">
 											<li>
 												<a href="<?php echo e(route('batches.index')); ?>">
@@ -219,6 +250,8 @@
 												</a>
 											</li>
 										</ul>
+										<?php endif; ?>
+										<?php if($admin->hasPermissionTo('manage-batches', 'admin')): ?>
 										<ul class="nav nav-children">
 											<li>
 												<a href="<?php echo e(route('admin.activeBatch')); ?>">
@@ -226,8 +259,10 @@
 												</a>
 											</li>
 										</ul>
+										<?php endif; ?>
 									</li>
-
+									<?php endif; ?>
+									<?php if($admin->hasPermissionTo('manage-mcq-exams', 'admin')): ?>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-pencil" aria-hidden="true"></i>
@@ -248,7 +283,8 @@
 											</li>
 										</ul>
 									</li>
-
+									<?php endif; ?>
+									<?php if($admin->hasPermissionTo('manage-cq-exams', 'admin')): ?>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-book" aria-hidden="true"></i>
@@ -269,7 +305,8 @@
 											</li>
 										</ul>
 									</li>
-
+									<?php endif; ?>
+									<?php if($admin->hasPermissionTo('view-mcq-results', 'admin')): ?>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-pencil" aria-hidden="true"></i>
@@ -283,7 +320,10 @@
 											</li>
 										</ul>
 									</li>
+									<?php endif; ?>
 
+									<!-- Payment -->
+									 <?php if($admin->hasPermissionTo('view-payments', 'admin')): ?>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-money" aria-hidden="true"></i>
@@ -297,12 +337,15 @@
 											</li>
 										</ul>
 									</li>
-
+									<?php endif; ?>
+									<!-- Online Students -->
+									 <?php if($admin->hasPermissionTo('view-online-students', 'admin') || $admin->hasPermissionTo('approve-online-payments', 'admin')): ?>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-user" aria-hidden="true"></i>
 											<span>Online Students</span>
 										</a>
+										<?php if($admin->hasPermissionTo('view-online-students', 'admin')): ?>
 										<ul class="nav nav-children">
 											<li>
 												<a href="<?php echo e(route('admin.online_students')); ?>">
@@ -310,6 +353,8 @@
 												</a>
 											</li>
 										</ul>
+										<?php endif; ?>
+										<?php if($admin->hasPermissionTo('view-payments', 'admin')): ?>
 										<ul class="nav nav-children">
 											<li>
 												<a href="<?php echo e(route('admin.online_pending_payments')); ?>">
@@ -324,13 +369,18 @@
 												</a>
 											</li>
 										</ul>
+										<?php endif; ?>
 									</li>
+									<?php endif; ?>
 
+									<!-- Offline Students -->
+									 <?php if($admin->hasPermissionTo('view-offline-students', 'admin') || $admin->hasPermissionTo('manage-offline-payments', 'admin')): ?>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-user" aria-hidden="true"></i>
 											<span>Offline Students</span>
 										</a>
+										<?php if($admin->hasPermissionTo('view-offline-students', 'admin')): ?>
 										<ul class="nav nav-children">
 											<li>
 												<a href="<?php echo e(route('admin.offline_students')); ?>">
@@ -338,6 +388,8 @@
 												</a>
 											</li>
 										</ul>
+										<?php endif; ?>
+										<?php if($admin->hasPermissionTo('manage-offline-payments', 'admin')): ?>
 										<ul class="nav nav-children">
 											<li>
 												<a href="<?php echo e(route('admin.offline_payment_list')); ?>">
@@ -345,13 +397,17 @@
 												</a>
 											</li>
 										</ul>
+										<?php endif; ?>
 									</li>
-
+									<?php endif; ?>
+									<?php if($admin->hasPermissionTo('manage-contents', 'admin') || 
+										$admin->hasPermissionTo('manage-lecture-sheets', 'admin')): ?>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-upload" aria-hidden="true"></i>
 											<span>Uplaod Center</span>
 										</a>
+										<?php if($admin->hasPermissionTo('manage-contents', 'admin')): ?>
 										<ul class="nav nav-children">
 											<li>
 												<a href="<?php echo e(route('contents.index')); ?>">
@@ -359,6 +415,8 @@
 												</a>
 											</li>
 										</ul>
+										<?php endif; ?>
+										<?php if($admin->hasPermissionTo('manage-lecture-sheets', 'admin')): ?>
 										<ul class="nav nav-children">
 											<li>
 												<a href="<?php echo e(route('lecture_sheets.index')); ?>">
@@ -366,32 +424,45 @@
 												</a>
 											</li>
 										</ul>
+										<?php endif; ?>
 									</li>
+									<?php endif; ?>
 
+									<?php if($admin->hasPermissionTo('view-expenses', 'admin') || 
+										$admin->hasPermissionTo('manage-expense-categories', 'admin')): ?>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-credit-card"></i>
 											<span>Accounting</span>
 										</a>
 										<ul class="nav nav-children">
+											<?php if($admin->hasPermissionTo('view-expenses', 'admin')): ?>
 											<li>
 												<a href="<?php echo e(route('expenses.index')); ?>">
 													Expense
 												</a>
 											</li>
+											<?php endif; ?>
+											<?php if($admin->hasPermissionTo('manage-expense-categories', 'admin')): ?>
 											<li>
 												<a href="<?php echo e(route('expenseCategory.index')); ?>">
 													Expense Group
 												</a>
 											</li>
+											<?php endif; ?>
 										</ul>
 									</li>
+									<?php endif; ?>
 
+									<?php if($admin->hasPermissionTo('send-messages', 'admin') || 
+										$admin->hasPermissionTo('send-sms', 'admin') || 
+										$admin->hasPermissionTo('send-due-sms', 'admin')): ?>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-paper-plane" aria-hidden="true"></i>
 											<span>Communication</span>
 										</a>
+										<?php if($admin->hasPermissionTo('send-messages', 'admin')): ?>
 										<ul class="nav nav-children">
 											<li>
 												<a href="<?php echo e(route('messages.index')); ?>">
@@ -399,6 +470,8 @@
 												</a>
 											</li>
 										</ul>
+										<?php endif; ?>	
+										<?php if($admin->hasPermissionTo('send-sms', 'admin')): ?>
 										<ul class="nav nav-children">
 											<li>
 												<a href="<?php echo e(route('sms.index')); ?>">
@@ -406,6 +479,8 @@
 												</a>
 											</li>
 										</ul>
+										<?php endif; ?>
+										<?php if($admin->hasPermissionTo('send-due-sms', 'admin')): ?>
 										<ul class="nav nav-children">
 											<li>
 												<a href="<?php echo e(route('dueSms.index')); ?>">
@@ -413,41 +488,62 @@
 												</a>
 											</li>
 										</ul>
+										<?php endif; ?>
 									</li>
+									<?php endif; ?>
 
+									<!-- Setting -->
+									<?php if($admin->hasPermissionTo('manage-company-details', 'admin') || 
+										$admin->hasPermissionTo('manage-zoom-api', 'admin') || 
+										$admin->hasPermissionTo('manage-instructions', 'admin') || 
+										$admin->hasPermissionTo('manage-contents', 'admin') || 
+										$admin->hasPermissionTo('manage-roles', 'admin')): ?>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-cog" aria-hidden="true"></i>
 											<span>Setting</span>
 										</a>
 										<ul class="nav nav-children">
+											<?php if($admin->hasPermissionTo('manage-company-details', 'admin')): ?>
 											<li>
 												<a href="<?php echo e(route('admin.companyDetail')); ?>">
 													 Comapny Info
 												</a>
 											</li>
+											<?php endif; ?>
+											<?php if($admin->hasPermissionTo('manage-zoom-api', 'admin')): ?>
 											<li>
 												<a href="<?php echo e(route('zoomApis.index')); ?>">
 													 Zoom Api
 												</a>
 											</li>
+											<?php endif; ?>
+											<?php if($admin->hasPermissionTo('manage-instructions', 'admin')): ?>
 											<li>
 												<a href="<?php echo e(route('admin.instruction')); ?>">
 													 Payment Instruction
 												</a>
 											</li>
+											<?php endif; ?>
+											<?php if($admin->hasPermissionTo('manage-contents', 'admin')): ?>
 											<li>
 												<a href="<?php echo e(route('upload_content_types.index')); ?>">
 													 Upload Content Type
 												</a>
 											</li>
+											<?php endif; ?>
+											<?php if($admin->hasPermissionTo('manage-roles', 'admin')): ?>
 											<li>
 												<a href="<?php echo e(route('roles.index')); ?>">
 													 Roles
 												</a>
 											</li>
+											<?php endif; ?>
 										</ul>
 									</li>
+									<?php endif; ?>
+									<!-- Report -->
+									 <?php if($admin->hasPermissionTo('view-expense-reports', 'admin')): ?>
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-file" aria-hidden="true"></i>
@@ -460,8 +556,9 @@
 												</a>
 											</li>
 										</ul>
-										>
+										
 									</li>
+									<?php endif; ?>
 									
 								</ul>
 							</nav>

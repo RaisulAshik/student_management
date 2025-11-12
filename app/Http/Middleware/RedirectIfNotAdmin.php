@@ -8,7 +8,8 @@ class RedirectIfNotAdmin
     
     public function handle($request, Closure $next, $guard="admin")
     {
-        if(auth()->guard($guard)->check() && Auth::guard('admin')->user()->role->id == 1) {
+        // if(auth()->guard($guard)->check() && Auth::guard('admin')->user()->role->id == 1) {
+        if(auth()->guard($guard)->check()) {
             
 
             return $next($request);

@@ -57,20 +57,20 @@ class StudentAuthController extends Controller
 
     public function searchClass(Request $request){
 
-         
-          $admin=Admin::find($request->get('authUser'));
-       if($admin){
-              $branch_id=$request->get('branch_id');
-              $allowedClassIds = $admin->classNames->pluck('id')->toArray();
-              $data=ClassName::where('branch_id',$branch_id)
-                               ->whereIn('id',$allowedClassIds)
-                               ->where('status',1)
-                               ->get();
+          $admin = Admin::find($request->get('authUser'));
+          if ($admin) {
+              $branch_id = $request->get('branch_id');
+              $query = ClassName::where('branch_id', $branch_id)->where('status', 1);
 
-              return response()->json($data);
-       }else{
-              return response()->json(['error' => 'class not found']);;
-       }
+              if (!$admin->hasRole('Super Admin', 'admin')) {
+                  $allowedClassIds = $admin->classNames->pluck('id')->toArray();
+                  $query->whereIn('id', $allowedClassIds);
+              }
+
+              return response()->json($query->get());
+          } else {
+              return response()->json(['error' => 'class not found']);
+          }
     }
 
 

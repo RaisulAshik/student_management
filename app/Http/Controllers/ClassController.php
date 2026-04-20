@@ -17,12 +17,15 @@ class ClassController extends Controller
      */
     public function index()
     {
-       
-        $classes = ClassName::whereIn(
-            'id',
-            Auth::guard('admin')->user()->classNames->pluck('id')
-        )->get();
-        return view('admin.class.classList',compact('classes'));
+        $admin = Auth::guard('admin')->user();
+
+        if ($admin->hasRole('Super Admin', 'admin')) {
+            $classes = ClassName::all();
+        } else {
+            $classes = ClassName::whereIn('id', $admin->classNames->pluck('id'))->get();
+        }
+
+        return view('admin.class.classList', compact('classes'));
     }
 
     /**

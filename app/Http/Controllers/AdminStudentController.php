@@ -12,17 +12,21 @@ class AdminStudentController extends Controller
 {
     public function list(){
 
-      $admin=Auth::guard('admin')->user(); 
-        $allowedClassIds = $admin->classNames->pluck('id')->toArray();
-        $students=User::with(['subjects' => function ($query) {
-                       $query->where('status', '=', '1');
-                       }])
-                       ->whereIn('class_id',$allowedClassIds)
-                       ->get();
-                       
-        return view('admin.student.studentList',compact('students','allowedClassIds'));
+        $admin = Auth::guard('admin')->user();
 
+        if ($admin->hasRole('Super Admin', 'admin')) {
+            $allowedClassIds = \App\ClassName::pluck('id')->toArray();
+        } else {
+            $allowedClassIds = $admin->classNames->pluck('id')->toArray();
+        }
 
+        $students = User::with(['subjects' => function ($query) {
+                        $query->where('status', '=', '1');
+                        }])
+                        ->whereIn('class_id', $allowedClassIds)
+                        ->get();
+
+        return view('admin.student.studentList', compact('students', 'allowedClassIds'));
     }
 
      public function listSearch(Request $request)

@@ -32,12 +32,10 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        // $classes=ClassName::distinct('name')->select('id','name')->get();
-      
-        
-        $branches=Branch::all();
-        $admins   = Admin::where('role_id', 4)->get();
-        return view('admin.subject.addSubject',compact('branches', 'admins'));
+        $classes = ClassName::all();
+        $branches = Branch::all();
+        $admins = Admin::where('role_id', 4)->get();
+        return view('admin.subject.addSubject', compact('classes', 'branches', 'admins'));
     }
 
     /**

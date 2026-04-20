@@ -42,10 +42,11 @@ class ReportController extends Controller
         
         $admin = Auth::guard('admin')->user();
 
-        // Get all class_ids by this admin is allowed to access
-        $allowedClassIds = [];
-        foreach ($admin->classNames as $class) {
-            $allowedClassIds[] = $class->id;
+        // Super Admin sees all classes; other admins see only their allocated classes
+        if ($admin->hasRole('Super Admin', 'admin')) {
+            $allowedClassIds = \App\ClassName::pluck('id')->toArray();
+        } else {
+            $allowedClassIds = $admin->classNames->pluck('id')->toArray();
         }
 
         // getting data for all date in the date range

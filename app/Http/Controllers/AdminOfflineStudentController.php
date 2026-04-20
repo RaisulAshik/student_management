@@ -21,16 +21,21 @@ class AdminOfflineStudentController extends Controller
 {
     public function list()
     {
-        $admin=Auth::guard('admin')->user(); 
-        $allowedClassIds = $admin->classNames->pluck('id')->toArray();
-        $students=User::where('student_type', 0)
-                       ->with(['subjects' => function ($query) {
-                           $query->where('status', '=', '1');
-                       }])
-                       ->whereIn('class_id',$allowedClassIds)
-                       ->get();
-       
-       
+        $admin = Auth::guard('admin')->user();
+
+        if ($admin->hasRole('Super Admin', 'admin')) {
+            $allowedClassIds = ClassName::pluck('id')->toArray();
+        } else {
+            $allowedClassIds = $admin->classNames->pluck('id')->toArray();
+        }
+
+        $students = User::where('student_type', 0)
+                        ->with(['subjects' => function ($query) {
+                            $query->where('status', '=', '1');
+                        }])
+                        ->whereIn('class_id', $allowedClassIds)
+                        ->get();
+
         return view('admin.offline.studentList', compact('students'));
     }
 

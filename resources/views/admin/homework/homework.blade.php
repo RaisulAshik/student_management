@@ -55,12 +55,12 @@
 									<tbody>
 										@foreach($homeworks as $homework)
 										<tr class="gradeX">
-											<td>{{$homework->student->first_name}} {{$homework->student->last_name}}</td>
-											<td>{{$homework->teacher->name}}</td>
-											<td>{{$homework->class->name}}</td>
-											<td>{{$homework->batch->name}}</td>
-											<td>{{$homework->branch->name}}</td>
-											<td>{{$homework->subject->name}}</td>
+											<td>{{optional($homework->student)->first_name}} {{optional($homework->student)->last_name}}</td>
+											<td>{{optional($homework->teacher)->name}}</td>
+											<td>{{optional($homework->class)->name}}</td>
+											<td>{{optional($homework->batch)->name}}</td>
+											<td>{{optional($homework->branch)->name}}</td>
+											<td>{{optional($homework->subject)->name}}</td>
 											<td>{{$homework->title}}</td>
 											<td>{{$homework->submission_date}}</td>
 											<td>{{$homework->score}}</td>

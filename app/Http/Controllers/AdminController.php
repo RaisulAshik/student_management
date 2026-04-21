@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Admin;
+use App\ClassName;
 use Auth;
 use Hash;
 
@@ -47,13 +48,14 @@ class AdminController extends Controller
             
         ]);
 
-        $admin=new Admin;
-        $admin->name=$request->name;
-        $admin->email=$request->email;
-        $admin->role_id=1;
-
-        $admin->password=bcrypt($request->password);
+        $admin = new Admin;
+        $admin->name = $request->name;
+        $admin->email = $request->email;
+        $admin->role_id = 1;
+        $admin->password = bcrypt($request->password);
         $admin->save();
+
+        $admin->assignRole('Admin');
 
         return redirect('admin/admins/');
 
@@ -79,9 +81,10 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-
-        $admin=Admin::find($id);
-        return view('admin.admin.editAdmin',compact('admin'));
+        $admin = Admin::find($id);
+        $classes = ClassName::all();
+        $assignedClassIds = $admin->classNames->pluck('id')->toArray();
+        return view('admin.admin.editAdmin', compact('admin', 'classes', 'assignedClassIds'));
     }
 
     /**
@@ -101,10 +104,12 @@ class AdminController extends Controller
 
         ]);
 
-        $admin=Admin::find($id);
-        $admin->name=$request->name;
-        $admin->email=$request->email;
+        $admin = Admin::find($id);
+        $admin->name = $request->name;
+        $admin->email = $request->email;
         $admin->save();
+
+        $admin->classNames()->sync($request->input('class_ids', []));
 
         return redirect('admin/admins/');
     }

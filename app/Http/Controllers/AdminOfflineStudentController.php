@@ -21,16 +21,15 @@ class AdminOfflineStudentController extends Controller
 {
     public function list()
     {
-        $admin=Auth::guard('admin')->user(); 
-        $allowedClassIds = $admin->classNames->pluck('id')->toArray();
-        $students=User::where('student_type', 0)
-                       ->with(['subjects' => function ($query) {
-                           $query->where('status', '=', '1');
-                       }])
-                       ->whereIn('class_id',$allowedClassIds)
-                       ->get();
-       
-       
+        $admin = Auth::guard('admin')->user();
+        $allowedClassIds = $admin->allowedClassIds();
+        $students = User::where('student_type', 0)
+                        ->with(['subjects' => function ($query) {
+                            $query->where('status', '=', '1');
+                        }])
+                        ->whereIn('class_id', $allowedClassIds)
+                        ->get();
+
         return view('admin.offline.studentList', compact('students'));
     }
 
@@ -611,7 +610,7 @@ class AdminOfflineStudentController extends Controller
     public function offline_payment_list()
     {
         $admin = Auth::guard('admin')->user();
-        $allowedClassIds = $admin->classNames->pluck('id')->toArray();
+        $allowedClassIds = $admin->allowedClassIds();
         $payments = StudentPaymentInstallment::whereHas('payment', function ($query) use ($allowedClassIds) {
             $query->whereIn('class_id', $allowedClassIds);
         })

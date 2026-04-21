@@ -12,15 +12,15 @@ class AdminStudentController extends Controller
 {
     public function list(){
 
-      $admin=Auth::guard('admin')->user(); 
-        $allowedClassIds = $admin->classNames->pluck('id')->toArray();
-        $students=User::with(['subjects' => function ($query) {
-                       $query->where('status', '=', '1');
-                       }])
-                       ->whereIn('class_id',$allowedClassIds)
-                       ->get();
-                       
-        return view('admin.student.studentList',compact('students','allowedClassIds'));
+        $admin = Auth::guard('admin')->user();
+        $allowedClassIds = $admin->allowedClassIds();
+        $students = User::with(['subjects' => function ($query) {
+                        $query->where('status', '=', '1');
+                    }])
+                    ->whereIn('class_id', $allowedClassIds)
+                    ->get();
+
+        return view('admin.student.studentList', compact('students', 'allowedClassIds'));
 
 
     }

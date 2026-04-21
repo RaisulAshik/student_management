@@ -61,11 +61,28 @@
 											</div>
 									</div>
 
-									<button type="submit" class="mb-xs mt-xs mr-xs btn btn-success">Edit</button>
-									
-						
+									<div class="form-group">
+										<label class="col-md-2 control-label">Assigned Classes</label>
+										<div class="col-md-6">
+											<div class="panel panel-default" style="padding:10px 15px; max-height:250px; overflow-y:auto;">
+												@forelse($classes as $class)
+												<label style="display:block; font-weight:normal; cursor:pointer;">
+													<input type="checkbox"
+														name="class_ids[]"
+														value="{{ $class->id }}"
+														{{ in_array($class->id, $assignedClassIds) ? 'checked' : '' }}>
+													{{ $class->name }}
+												</label>
+												@empty
+												<p class="text-muted">No classes found.</p>
+												@endforelse
+											</div>
+										</div>
+									</div>
 
-								</form>	
+									<button type="submit" class="mb-xs mt-xs mr-xs btn btn-success">Save</button>
+
+								</form>
 							</div>
 						</section>
 @endsection

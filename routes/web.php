@@ -696,7 +696,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     //Role management
 
 
-    Route::resource('roles', 'RoleController')->middleware('check.permission:manage-roles');;
+    Route::resource('roles', 'RoleController')->middleware('check.permission:manage-roles');
+    Route::get('roles/{id}/permissions', 'RoleController@managePermissions')->middleware('check.permission:manage-roles')->name('roles.permissions');
+    Route::post('roles/{id}/permissions', 'RoleController@updatePermissions')->middleware('check.permission:manage-roles')->name('roles.permissions.update');
 
 
     //Expense Head

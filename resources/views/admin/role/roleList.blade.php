@@ -45,13 +45,18 @@
 										<tr class="gradeX">
 											<td>{{$role->name}}</td>
 											<td>
-												<a href="{{ route('roles.edit',$role->id) }}" class="mb-xs mt-xs mr-xs btn btn-primary" >Edit</a>
+												@if($role->name !== 'Super Admin')
+													<a href="{{ route('roles.permissions', $role->id) }}" class="mb-xs mt-xs mr-xs btn btn-success">Manage Permissions</a>
+												@endif
+												<a href="{{ route('roles.edit',$role->id) }}" class="mb-xs mt-xs mr-xs btn btn-primary">Edit</a>
 
-												<form method="post" action="{{ route('roles.destroy',$role->id) }}"  style="display: inline">
+												@if($role->name !== 'Super Admin')
+												<form method="post" action="{{ route('roles.destroy',$role->id) }}" style="display: inline">
                                                 @csrf
                                                 @method('delete')
                                                 <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure to delete')">Delete</button>
                                                 </form>
+												@endif
 											</td>
 										</tr>
 										@endforeach

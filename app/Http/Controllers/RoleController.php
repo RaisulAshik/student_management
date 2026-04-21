@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use App\Role;
+use Spatie\Permission\Models\Role as SpatieRole;
+use Spatie\Permission\Models\Permission;
 
 
 class RoleController extends Controller
@@ -102,6 +104,60 @@ class RoleController extends Controller
         $role=Role::find($id);
         $role->delete();
         Session::flash('success', 'Role Deleted Successfully');
+        return redirect('admin/roles');
+    }
+
+    public function managePermissions($id)
+    {
+        $role = Role::findOrFail($id);
+        $spatieRole = SpatieRole::where('name', $role->name)->where('guard_name', 'admin')->first();
+
+        $rolePermissions = $spatieRole
+            ? $spatieRole->permissions()->where('guard_name', 'admin')->pluck('name')->toArray()
+            : [];
+
+        $permissionGroups = [
+            'Dashboard'       => ['view-dashboard'],
+            'Students'        => ['view-students','create-students','edit-students','delete-students'],
+            'Online Students' => ['view-online-students','create-online-students','edit-online-students','delete-online-students'],
+            'Offline Students'=> ['view-offline-students','create-offline-students','edit-offline-students','delete-offline-students'],
+            'Academic'        => ['manage-classes','manage-subjects','manage-branches','manage-batches'],
+            'MCQ Exams'       => ['manage-mcq-exams','view-mcq-results'],
+            'CQ Exams'        => ['manage-cq-exams','view-cq-results','evaluate-cq-exams'],
+            'Homework'        => ['view-homework','evaluate-homework'],
+            'Live Class'      => ['manage-zoom-classes','view-attendance','submit-attendance'],
+            'Content'         => ['manage-contents','manage-lecture-sheets'],
+            'Teachers'        => ['view-teachers','create-teachers','edit-teachers','delete-teachers','manage-teacher-payments'],
+            'Admins'          => ['view-admins','create-admins','edit-admins','delete-admins'],
+            'Payments'        => ['view-payments','view-student-payments','approve-online-payments','manage-offline-payments'],
+            'Expenses'        => ['view-expenses','create-expenses','edit-expenses','delete-expenses','manage-expense-heads','manage-expense-categories','view-expense-reports'],
+            'Communication'   => ['send-messages','send-sms','send-due-sms'],
+            'System'          => ['manage-roles','manage-company-details','manage-zoom-api','manage-instructions'],
+        ];
+
+        return view('admin.role.managePermissions', compact('role', 'permissionGroups', 'rolePermissions'));
+    }
+
+    public function updatePermissions(Request $request, $id)
+    {
+        $role = Role::findOrFail($id);
+
+        if ($role->name === 'Super Admin') {
+            Session::flash('error', 'Super Admin permissions cannot be modified.');
+            return redirect('admin/roles');
+        }
+
+        $spatieRole = SpatieRole::where('name', $role->name)->where('guard_name', 'admin')->firstOrFail();
+
+        $permissionObjects = Permission::where('guard_name', 'admin')
+            ->whereIn('name', $request->input('permissions', []))
+            ->get();
+
+        $spatieRole->syncPermissions($permissionObjects);
+
+        app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
+
+        Session::flash('success', 'Permissions updated for ' . $role->name);
         return redirect('admin/roles');
     }
 }

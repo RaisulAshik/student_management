@@ -30,6 +30,14 @@ class Admin extends Authenticatable
         return $this->belongsToMany(ClassName::class, 'admin_class_name');
     }
 
+    public function allowedClassIds(): array
+    {
+        if ($this->hasRole('Super Admin', 'admin')) {
+            return ClassName::pluck('id')->toArray();
+        }
+        return $this->classNames->pluck('id')->toArray();
+    }
+
     public function subjects()
     {
         return $this->belongsToMany(Subject::class, 'admin_subjects', 'admin_id', 'subject_id');

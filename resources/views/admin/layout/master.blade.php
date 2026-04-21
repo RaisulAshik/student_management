@@ -150,7 +150,7 @@
 									</li>
 									@endif
 									<!-- Student Homework -->
-									@if($admin->hasPermissionTo('view-homework'))
+									@if($admin->hasPermissionTo('view-homework', 'admin'))
 									<li class="nav-active">
 										<a href="{{route('admin.homework')}}">
 											<i class="fa fa-tasks" aria-hidden="true"></i>
@@ -158,7 +158,7 @@
 										</a>
 									</li>
 									@endif
-									@if($admin->hasPermissionTo('manage-zoom-classes'))
+									@if($admin->hasPermissionTo('manage-zoom-classes', 'admin'))
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-video-camera" aria-hidden="true"></i>
@@ -262,12 +262,13 @@
 										@endif
 									</li>
 									@endif
-									@if($admin->hasPermissionTo('manage-mcq-exams', 'admin'))
+									@if($admin->hasPermissionTo('manage-mcq-exams', 'admin') || $admin->hasPermissionTo('view-mcq-results', 'admin'))
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-pencil" aria-hidden="true"></i>
 											<span>MCQ Exam</span>
 										</a>
+										@if($admin->hasPermissionTo('manage-mcq-exams', 'admin'))
 										<ul class="nav nav-children">
 											<li>
 												<a href="{{route('admin.mcqExamList')}}">
@@ -275,6 +276,8 @@
 												</a>
 											</li>
 										</ul>
+										@endif
+										@if($admin->hasPermissionTo('view-mcq-results', 'admin'))
 										<ul class="nav nav-children">
 											<li>
 												<a href="{{route('admin.mcqExamResult')}}">
@@ -282,14 +285,16 @@
 												</a>
 											</li>
 										</ul>
+										@endif
 									</li>
 									@endif
-									@if($admin->hasPermissionTo('manage-cq-exams', 'admin'))
+									@if($admin->hasPermissionTo('manage-cq-exams', 'admin') || $admin->hasPermissionTo('view-cq-results', 'admin'))
 									<li class="nav-parent">
 										<a>
 											<i class="fa fa-book" aria-hidden="true"></i>
 											<span>CQ Exam</span>
 										</a>
+										@if($admin->hasPermissionTo('manage-cq-exams', 'admin'))
 										<ul class="nav nav-children">
 											<li>
 												<a href="{{route('admin.cqExamList')}}">
@@ -297,6 +302,8 @@
 												</a>
 											</li>
 										</ul>
+										@endif
+										@if($admin->hasPermissionTo('view-cq-results', 'admin'))
 										<ul class="nav nav-children">
 											<li>
 												<a href="{{route('admin.cqExamResult')}}">
@@ -304,6 +311,7 @@
 												</a>
 											</li>
 										</ul>
+										@endif
 									</li>
 									@endif
 									@if($admin->hasPermissionTo('view-mcq-results', 'admin'))

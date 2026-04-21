@@ -17,12 +17,9 @@ class ClassController extends Controller
      */
     public function index()
     {
-       
-        $classes = ClassName::whereIn(
-            'id',
-            Auth::guard('admin')->user()->classNames->pluck('id')
-        )->get();
-        return view('admin.class.classList',compact('classes'));
+        $admin = Auth::guard('admin')->user();
+        $classes = ClassName::whereIn('id', $admin->allowedClassIds())->get();
+        return view('admin.class.classList', compact('classes'));
     }
 
     /**

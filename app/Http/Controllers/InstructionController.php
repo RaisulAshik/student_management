@@ -36,7 +36,16 @@ class InstructionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'instruction' => 'required',
+        ]);
+
+        $instruction = new PaymentInstruction();
+        $instruction->instruction = $request->instruction;
+        $instruction->save();
+
+        $request->session()->flash('success', 'Instruction Successfully Added');
+        return redirect('admin/instruction');
     }
 
     /**

@@ -43,108 +43,93 @@
 									<a href="#" class="fa fa-times"></a>
 								</div>
 						
-								<h2 class="panel-title">Edit Company Info</h2>
+								<h2 class="panel-title">{{ $company ? 'Edit Company Info' : 'Add Company Info' }}</h2>
 							</header>
 							<div class="panel-body">
-								<form class="" action="{{ route('admin.companyDetail.update',$company->id)}}" method="post" enctype="multipart/form-data" >
+								@if($company)
+									<form action="{{ route('admin.companyDetail.update', $company->id) }}" method="post" enctype="multipart/form-data">
+								@else
+									<form action="{{ route('admin.companyDetail.store') }}" method="post" enctype="multipart/form-data">
+								@endif
 									@csrf
 									<div class="form-group">
-										<label class="col-md-2 control-label" for="inputDefault">Name</label>
-											<div class="col-md-6">
-												<input type="text" class="form-control" name="name" id="inputDefault" value="{{$company->name}}">
-											</div>
-									</div>
-									<div class="form-group">
-										<label class="col-md-2 control-label" for="inputDefault">Email</label>
-											<div class="col-md-6">
-												<input type="email" class="form-control" name="email" id="inputDefault" value="{{$company->email}}">
-											</div>
-									</div>
-									<div class="form-group">
-										<label class="col-md-2 control-label" for="inputDefault">Phone</label>
+										<label class="col-md-2 control-label" for="company_name">Name</label>
 										<div class="col-md-6">
-											<input type="number" name="phone" class="form-control" id="inputDefault" value="{{$company->phone}}">
+											<input type="text" class="form-control" id="company_name" name="name" value="{{ optional($company)->name }}">
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-md-2 control-label" for="textareaAutosize">Address</label>
-										    <div class="col-md-6">
-												<textarea class="form-control" name="address" rows="3" id="textareaAutosize" data-plugin-textarea-autosize>{{$company->address}}</textarea>
-											</div>
+										<label class="col-md-2 control-label" for="company_email">Email</label>
+										<div class="col-md-6">
+											<input type="email" class="form-control" id="company_email" name="email" value="{{ optional($company)->email }}">
+										</div>
 									</div>
 									<div class="form-group">
-										<label class="col-md-2 control-label" for="inputDefault">Facebook Link</label>
-											<div class="col-md-6">
-												<input type="text" class="form-control" name="facebook" id="inputDefault" value="{{$company->facebook}}">
-											</div>
+										<label class="col-md-2 control-label" for="company_phone">Phone</label>
+										<div class="col-md-6">
+											<input type="number" class="form-control" id="company_phone" name="phone" value="{{ optional($company)->phone }}">
+										</div>
 									</div>
-
 									<div class="form-group">
-										    <div class="col-md-2"></div>
-											<div class="col-md-6">
-												@if($company->logo != null)
-                       
-						                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-						                                <img src="{{ asset('/company/'.$company->logo) }}" alt="logo" />
-						                            </div>
-						                        @else
-						                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-						                                <img src="{{ asset('images/logo.png')}}" alt="No Image" />
-						                            </div>
-						                        @endif
-											</div>
+										<label class="col-md-2 control-label" for="company_address">Address</label>
+										<div class="col-md-6">
+											<textarea class="form-control" id="company_address" name="address" rows="3" data-plugin-textarea-autosize>{{ optional($company)->address }}</textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label" for="company_facebook">Facebook Link</label>
+										<div class="col-md-6">
+											<input type="text" class="form-control" id="company_facebook" name="facebook" value="{{ optional($company)->facebook }}">
+										</div>
 									</div>
 
 									<div class="form-group">
-										<label class="col-md-2 control-label" for="inputDefault">Logo</label>
-											<div class="col-md-6">
-												<input type="file" class="form-control" name="logo" id="inputDefault">
+										<div class="col-md-2"></div>
+										<div class="col-md-6">
+											<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+												<img src="{{ $company && $company->logo ? asset('/company/'.$company->logo) : asset('images/logo.png') }}" alt="logo" />
 											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label" for="company_logo">Logo</label>
+										<div class="col-md-6">
+											<input type="file" class="form-control" id="company_logo" name="logo">
+										</div>
 									</div>
 
 									<div class="form-group">
-										    <div class="col-md-2"></div>
-											<div class="col-md-6">
-												@if($company->favicon != null)
-                       
-						                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-						                                <img src="{{ asset('/company/'.$company->favicon) }}" alt="logo" />
-						                            </div>
-						                        @else
-						                            <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-						                                <img src="{{ asset('images/logo.png')}}" alt="No Image" />
-						                            </div>
-						                        @endif
+										<div class="col-md-2"></div>
+										<div class="col-md-6">
+											<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+												<img src="{{ $company && $company->favicon ? asset('/company/'.$company->favicon) : asset('images/logo.png') }}" alt="favicon" />
 											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-2 control-label" for="company_favicon">Favicon</label>
+										<div class="col-md-6">
+											<input type="file" class="form-control" id="company_favicon" name="favicon">
+										</div>
 									</div>
 
 									<div class="form-group">
-										<label class="col-md-2 control-label" for="inputDefault">Favicon</label>
-											<div class="col-md-6">
-												<input type="file" class="form-control" name="favicon" id="inputDefault">
+										<label class="col-md-2 control-label" for="next_payment_date">Establish Date</label>
+										<div class="col-md-6">
+											<div class="input-group">
+												<span class="input-group-addon">
+													<i class="fa fa-calendar"></i>
+												</span>
+												<input type="text" name="establishDate" data-plugin-datepicker class="form-control" id="next_payment_date" value="{{ optional($company)->establishDate }}">
 											</div>
-									</div>
-									
-
-										<div class="form-group">
-										    <label class="col-md-2 control-label">Establish Date</label>
-										    <div class="col-md-6">
-												<div class="input-group">
-													<span class="input-group-addon">
-															<i class="fa fa-calendar"></i>
-													</span>
-													<input type="text" name="establishDate" data-plugin-datepicker class="form-control" id="next_payment_date" value="{{$company->establishDate}}">
-													</div>
-											</div>
-										 </div>	
-											
+										</div>
 									</div>
 
-									<button type="submit" class="mb-xs mt-xs mr-xs btn btn-success">Success</button>
-									
-						
+									<button type="submit" class="mb-xs mt-xs mr-xs btn btn-success">
+										{{ $company ? 'Update' : 'Save' }}
+									</button>
 
-								</form>	
+								</form>
 							</div>
 						</section>
 @endsection

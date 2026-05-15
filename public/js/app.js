@@ -139179,7 +139179,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\App.js";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\App.js";
 
 
 
@@ -139565,7 +139565,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\ChangePassword\\ChangePassword.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\ChangePassword\\ChangePassword.jsx";
 
 
 
@@ -140112,7 +140112,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\ClassLecture\\ClassLecture.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\ClassLecture\\ClassLecture.jsx";
 
 
 
@@ -140570,7 +140570,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\ClassRoutine\\ClassRoutine.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\ClassRoutine\\ClassRoutine.jsx";
 
 
 
@@ -141091,7 +141091,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\Contents\\Contents.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\Contents\\Contents.jsx";
 
 
 
@@ -141552,7 +141552,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\CqExam\\CqExam.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\CqExam\\CqExam.jsx";
 
 
 
@@ -142859,7 +142859,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\CqExam\\CqExamList.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\CqExam\\CqExamList.jsx";
 
 
 
@@ -143421,7 +143421,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\CqExam\\CqExamRankList.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\CqExam\\CqExamRankList.jsx";
 
 
 
@@ -144003,7 +144003,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\CqExam\\CqExamResultList.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\CqExam\\CqExamResultList.jsx";
 
 
 
@@ -144565,7 +144565,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\Dashboard\\Dashboard.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\Dashboard\\Dashboard.jsx";
 
 
 
@@ -145442,7 +145442,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\Exam\\Exam.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\Exam\\Exam.jsx";
 
 
 
@@ -146206,7 +146206,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\Exam\\ExamList.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\Exam\\ExamList.jsx";
 
 
 
@@ -146778,7 +146778,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\Exam\\McqExam.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\Exam\\McqExam.jsx";
 
 
 
@@ -147664,7 +147664,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\Exam\\McqExamAnswer.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\Exam\\McqExamAnswer.jsx";
 
 
 
@@ -148117,7 +148117,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\Exam\\McqExamList.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\Exam\\McqExamList.jsx";
 
 
 
@@ -148659,7 +148659,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\Exam\\McqExamRank.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\Exam\\McqExamRank.jsx";
 
 
 
@@ -149264,7 +149264,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\Footer\\Footer.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\Footer\\Footer.jsx";
 
 
 
@@ -149571,7 +149571,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\ForgetPassword\\ForgetPassword.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\ForgetPassword\\ForgetPassword.jsx";
 
 
 
@@ -149951,7 +149951,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\Header\\Header.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\Header\\Header.jsx";
 
 
 
@@ -150639,7 +150639,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\Header\\Logo.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\Header\\Logo.jsx";
 
 
 
@@ -150771,7 +150771,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\HomeWork\\HomeWork.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\HomeWork\\HomeWork.jsx";
 
 
 
@@ -151954,7 +151954,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\Inbox\\Inbox.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\Inbox\\Inbox.jsx";
 
 
 
@@ -152396,7 +152396,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\JoinClass\\JoinClass.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\JoinClass\\JoinClass.jsx";
 
 
 
@@ -152941,7 +152941,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\LiveClassHistory\\LiveClassHistory.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\LiveClassHistory\\LiveClassHistory.jsx";
 
 
 
@@ -153448,7 +153448,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\Loading\\Loading.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\Loading\\Loading.jsx";
 
 
 
@@ -153544,7 +153544,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\Login\\Login.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\Login\\Login.jsx";
 
 
 
@@ -154004,7 +154004,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\ManageCourse\\ManageCourse.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\ManageCourse\\ManageCourse.jsx";
 
 
 
@@ -155008,7 +155008,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NoDataFound_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_NoDataFound_css__WEBPACK_IMPORTED_MODULE_1__);
 var _this = undefined;
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\NoDataFound\\NoDataFound.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\NoDataFound\\NoDataFound.jsx";
 
 
 
@@ -155076,7 +155076,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\Payment\\Payment.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\Payment\\Payment.jsx";
 
 
 
@@ -155583,7 +155583,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\PaymentHistory\\PaymentHistory.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\PaymentHistory\\PaymentHistory.jsx";
 
 
 
@@ -156016,7 +156016,7 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\PdfViewer\\PdfViewer.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\PdfViewer\\PdfViewer.jsx";
 
  // import Viewer, { Worker } from "@phuocng/react-pdf-viewer";
 // import { Worker } from "@react-pdf-viewer/core";
@@ -156152,7 +156152,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\Profile\\Profile.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\Profile\\Profile.jsx";
 
 
 
@@ -157241,7 +157241,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\ProfileInfo\\ProfileInfo.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\ProfileInfo\\ProfileInfo.jsx";
 
 
 
@@ -157843,7 +157843,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\Registration\\RegistrationForm.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\Registration\\RegistrationForm.jsx";
 
 
 
@@ -159200,7 +159200,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var _jsxFileName = "C:\\xampp\\htdocs\\student_management(1)\\student_management\\resources\\js\\components\\SideBar\\SideBar.jsx";
+var _jsxFileName = "C:\\laragon\\www\\student_management\\resources\\js\\components\\SideBar\\SideBar.jsx";
 
 
 
@@ -160102,9 +160102,10 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 var Common = {
   // api: 'http://192.168.0.130:8000/'
-  // api: 'http://192.168.0.133:8000/'
+  // api: 'http://103.203.95.147:8000/'
   // api: "http://127.0.0.1:8000/"
-  api: "https://shadowaidelifeline.codegroover.com/"
+  // api: "http://localhost:8000/"
+  api: "https://schooldemo.zastainfotek.com/"
 }; // if (window.location.host === "localhost:8000") {
 //     Commpon.api = "http://localhost:8000";
 // }
@@ -160339,8 +160340,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\student_management(1)\student_management\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\student_management(1)\student_management\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\laragon\www\student_management\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\laragon\www\student_management\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ }),

@@ -41,9 +41,15 @@
                 @php
                    $company=App\CompanyDetail::first();
                 @endphp
+                @if($company)
                 <a href="/" class="logo pull-left">
                     <img src="{{asset('company/'.$company->logo)}}" height="54" alt="Porto Admin" />
                 </a>
+                @else
+                <a href="/" class="logo pull-left">
+                    <img src="{{asset('assets/backend/images/logo.png')}}" height="54" alt="Porto Admin" />
+                </a>
+                @endif
 
                 
                 <div class="panel panel-sign">

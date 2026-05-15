@@ -11,9 +11,16 @@
 		<meta name="description" content="JSOFT Admin - Responsive HTML5 Template">
 		<meta name="author" content="JSOFT.net">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-         
+         @if($company)
         <title>{{$company->name}}</title>
+		@else
+		<title>Student Management System</title>
+		@endif
+		@if($company)
          <link rel="icon" href="{{asset('company/'.$company->favicon)}}" >
+		 @else
+		 <link rel="icon" href="{{asset('assets/backend/images/favicon.png')}}" >
+		 @endif
 		
 		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
 
@@ -57,11 +64,19 @@
 				<div class="logo-container">
 					@if(Request::is('admin*'))
 						<a href="{{route('admin.dashboard')}}" class="logo">
-							<img src="{{asset('company/'.$company->logo)}}" height="40" alt="JSOFT Admin" />
+							@if($company)
+								<img src="{{asset('company/'.$company->logo)}}" height="40" alt="JSOFT Admin" />
+							@else
+								<img src="{{asset('assets/backend/images/logo.png')}}" height="40" alt="JSOFT Admin" />
+							@endif
 						</a>
 					@elseif(Request::is('teacher*'))
 					    <a href="{{route('teacher.dashboard')}}" class="logo">
-							<img src="{{asset('company/'.$company->logo)}}" height="40" alt="JSOFT Admin" />
+							@if($company)
+								<img src="{{asset('company/'.$company->logo)}}" height="40" alt="JSOFT Admin" />
+							@else
+								<img src="{{asset('assets/backend/images/logo.png')}}" height="40" alt="JSOFT Admin" />
+							@endif
 						</a>
 					@endif
 					<div class="visible-xs toggle-sidebar-left" data-toggle-class="sidebar-left-opened" data-target="html" data-fire-event="sidebar-left-opened">

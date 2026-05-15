@@ -43,23 +43,27 @@
 									<a href="#" class="fa fa-times"></a>
 								</div>
 						
-								<h2 class="panel-title">Edit Payment Instruction</h2>
+								<h2 class="panel-title">{{ $instruction ? 'Edit Payment Instruction' : 'Add Payment Instruction' }}</h2>
 							</header>
 							<div class="panel-body">
-								<form class="" action="{{ route('admin.instruction.update',$instruction->id)}}" method="post" enctype="multipart/form-data" >
+								@if($instruction)
+									<form action="{{ route('admin.instruction.update', $instruction->id) }}" method="post">
+								@else
+									<form action="{{ route('admin.instruction.store') }}" method="post">
+								@endif
 									@csrf
 									<div class="form-group">
-										<label class="col-md-2 control-label" for="textareaAutosize">Instruction</label>
-										    <div class="col-md-6">
-												<textarea class="form-control" name="instruction" rows="3" id="textareaAutosize" data-plugin-textarea-autosize>{{$instruction->instruction}}</textarea>
-											</div>
+										<label class="col-md-2 control-label" for="instruction_text">Instruction</label>
+										<div class="col-md-6">
+											<textarea class="form-control" name="instruction" id="instruction_text" rows="5" data-plugin-textarea-autosize>{{ optional($instruction)->instruction }}</textarea>
+										</div>
 									</div>
 
-									<button type="submit" class="mb-xs mt-xs mr-xs btn btn-success">Success</button>
-									
-						
+									<button type="submit" class="mb-xs mt-xs mr-xs btn btn-success">
+										{{ $instruction ? 'Update' : 'Save' }}
+									</button>
 
-								</form>	
+								</form>
 							</div>
 						</section>
 @endsection

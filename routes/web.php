@@ -659,6 +659,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {
     // Instructions
     Route::middleware('check.permission:manage-instructions')->group(function () {
         Route::get('/instruction', 'InstructionController@create')->name('admin.instruction');
+        Route::post('/instruction', 'InstructionController@store')->name('admin.instruction.store');
         Route::post('/instruction/update/{id}', 'InstructionController@update')->name('admin.instruction.update');
     });
 

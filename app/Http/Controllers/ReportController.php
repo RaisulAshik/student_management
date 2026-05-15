@@ -111,7 +111,7 @@ class ReportController extends Controller
                         if (!isset($income_array[$ob->batch_name])) {
                             $income_array[$ob->batch_name] = 0;
                         }
-                        $income_array[$ob->batch_name] =($income_array[$ob->batch_name]??0)+ ($ob->paid_amount*0.4);
+                        $income_array[$ob->batch_name] = ($income_array[$ob->batch_name] ?? 0) + $ob->installment_amount;
                     }
                 }else{
                     foreach ($offline_income as $oi) {
@@ -282,7 +282,7 @@ class ReportController extends Controller
                 if (!isset($obi->batch_name, $income)) {
                     $income[$obi->batch_name] = 0;
                 }
-                $income[$obi->batch_name] = ($income[$obi->batch_name]??0)+($obi->paid_amount*0.4);
+                $income[$obi->batch_name] = ($income[$obi->batch_name] ?? 0) + $obi->installment_amount;
             }
         }else{
             foreach ($offline_batch_income as $oi) {
